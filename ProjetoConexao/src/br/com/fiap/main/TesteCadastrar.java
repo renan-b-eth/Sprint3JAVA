@@ -4,8 +4,10 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import br.com.fiap.DAO.LogsDAO;
 import br.com.fiap.DAO.ProdutoDAO;
 import br.com.fiap.DAO.UsuarioDAO;
+import br.com.fiap.beans.Logs;
 import br.com.fiap.beans.Produto;
 import br.com.fiap.beans.Usuario;
 
@@ -24,16 +26,28 @@ public class TesteCadastrar {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		//Instanciar objetos
 		Usuario usuario = new Usuario();
+		Logs log = new Logs();
 		
 		UsuarioDAO dao = new UsuarioDAO();
+		LogsDAO daolog = new LogsDAO();
 		
-		usuario.setCodigo(inteiro("Código"));
+		//usuario
+		/*usuario.setCodigo(inteiro("Código"));
 		usuario.setLogin(texto("Login"));
-		usuario.setSenha(texto("Senha"));
+		usuario.setSenha(texto("Senha"));*/
 		
-		System.out.println(dao.inserir(usuario));
+		//log
 		
-
+		log.setCodigo(inteiro("codigo"));
+		log.setTitulo(texto("titulo"));
+		log.setDescricao(texto("descricao"));
+		log.setTipo(texto("Tipo"));
+		log.setData(texto("Data"));
+		
+		/*System.out.println(dao.inserir(usuario));*/
+		System.out.println(daolog.inserir(log));
+		
+		
 	}
 
 }
