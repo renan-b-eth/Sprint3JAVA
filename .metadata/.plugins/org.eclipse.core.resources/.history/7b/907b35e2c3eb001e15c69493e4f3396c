@@ -1,0 +1,7 @@
+package br.com.fiap.beans;
+
+public class Usuario {
+	
+	private int codigo;
+	private String login, senha, nome, email;
+}
